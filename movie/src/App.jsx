@@ -1,14 +1,12 @@
-import { Home } from "./Component/Screen/Home/Home"
-import { Library } from "./Component/Screen/Library/Library"
+import { Home } from "./Component/Screen/Home/Home";
+import { Library } from "./Component/Screen/Library/Library";
 
 function App() {
   return (
-   <>
-   
-<Home/>
-
-   </>
-  )
+    <>
+      <Home />
+    </>
+  );
 }
 
-export default App
+export default App;

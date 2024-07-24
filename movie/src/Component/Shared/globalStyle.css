@@ -1,5 +1,8 @@
-.screen-container{
-width: calc(100%-100px);
-height: 100%;
-background-color: black;
+.screen-container {
+  width: 100%;
+  padding-left: 125px;
+}
+
+.flex {
+  display: flex;
 }

@@ -1,7 +1,7 @@
-export const Trending =() =>{
-    return(
-        <>
-        <h2> Trending</h2>
-        </>
-    )
-}
+export const Trending = () => {
+  return (
+    <>
+      <h2> Trending</h2>
+    </>
+  );
+};

@@ -1,7 +1,13 @@
-.main-div{
-   background-color: grey;
-   height:100vh;
-   width: 100vw;
-  position: fixed;
-   display: flex;
+.main-div {
+  background-color: rgb(21, 20, 20);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-image: repeating-radial-gradient(
+      circle at 0 0,
+      transparent 0,
+      #090d1c 100px
+    ),
+    repeating-linear-gradient(#4767d055, #2b3040);
 }

@@ -1,0 +1,13 @@
+.left_body {
+  width: 75%;
+  margin-right: 2%;
+  height: 100%;
+}
+.right_body {
+  width: 25%;
+  height: 100%;
+  color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
