@@ -33,7 +33,7 @@ export const Player = () => {
     <>
       <div className="screen-container flex">
         <div className="left_body">
-          <AudioPlayer currentTrack={currentTrack} />
+          <AudioPlayer currentTrack={currentTrack} isPlaying={true} currentIndex={currentIndex} setcurrentIndex={setcurrentIndex} />
         </div>
         <div className="right_body ">
           <SongCard album={currentTrack.album} />

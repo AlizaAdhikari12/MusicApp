@@ -3,6 +3,7 @@ import './Controls.css'
 export const Controls=()=>{
     return(
         <>
+        controls
         </>
     )
 }
