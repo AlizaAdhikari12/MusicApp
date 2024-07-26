@@ -1,6 +1,6 @@
 import React from "react";
 import "./Queue.css";
-export const Queue = ({ tracks, setcurrentIndex }) => {
+export const Queue = ({ tracks, setCurrentIndex }) => {
   const formatDuration = (durationMs) => {
     const totalSeconds = Math.floor(durationMs / 1000);
     const minutes = Math.floor(totalSeconds / 60);
@@ -20,7 +20,7 @@ export const Queue = ({ tracks, setcurrentIndex }) => {
                 <div
                   key={index}
                   className="queue-item flex"
-                  onClick={() => setcurrentIndex(index)}
+                  onClick={() => setCurrentIndex(index)}
                 >
                   <p className="queue-name">{track?.track?.name}</p>
                   <p className="queue-duration">
