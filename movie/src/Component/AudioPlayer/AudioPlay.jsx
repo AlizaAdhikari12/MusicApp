@@ -10,10 +10,8 @@ export const AudioPlayer = ({
   currentIndex,
   setCurrentIndex,
 }) => {
-
-
   // tracking the playing button
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   // tracking the track progress
   const [trackProgress, setTrackProgress] = useState(0);
@@ -28,8 +26,6 @@ export const AudioPlayer = ({
   const isReady = useRef(false);
   const { duration } = audioRef.current;
   const audioProgress = duration ? (trackProgress / duration) * 100 : 0;
-
- 
 
   const handlePrev = () => {
     if (currentIndex - 1 < 0) {
@@ -53,8 +49,8 @@ export const AudioPlayer = ({
 
   useEffect(() => {
     if (isPlaying && audioRef.current) {
-      audioRef.current = new Audio(audioSrc)
-      audioRef.current.play()
+      audioRef.current = new Audio(audioSrc);
+      audioRef.current.play();
       startTimer();
     } else {
       clearInterval(intervalRef.current);
@@ -67,7 +63,7 @@ export const AudioPlayer = ({
     audioRef.current = new Audio(audioSrc);
     setTrackProgress(audioRef.current.currentTime);
     if (isReady.current) {
-      audioRef.current.play()
+      audioRef.current.play();
       setIsPlaying(true);
       startTimer();
     } else {
@@ -81,15 +77,20 @@ export const AudioPlayer = ({
       clearInterval(intervalRef.current);
     };
   }, []);
- const handleNext = () => {
+  const handleNext = () => {
     if (currentIndex < total.length - 1) {
       setCurrentIndex(currentIndex + 1);
     } else {
       setCurrentIndex(0);
     }
   };
-  const artists = currentTrack?.album?.artists.map(artist => artist.name).join(", ");
+  const artists = currentTrack?.album?.artists
+    .map((artist) => artist.name)
+    .join(", ");
 
+  const addZero = (n) => {
+   return( n > 9 ? "" + n : "0" + n
+  )};
   return (
     <div className="player-body flex">
       <div className="left-body">
@@ -106,9 +107,9 @@ export const AudioPlayer = ({
         <p className="song-artist">{artists}</p>
         <div className="player-right-bottom flex">
           <div className="song-duration flex">
-            <p className="duration">0.0</p>
+            <p className="duration">0.{addZero(Math.round(trackProgress))}</p>
             <WaveAnimation isPlaying={isPlaying} />
-            <p className="duration">0.3</p>
+            <p className="duration">0.29</p>
           </div>
           <Controls
             isPlaying={isPlaying}
